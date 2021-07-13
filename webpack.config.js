@@ -1,7 +1,7 @@
 
 const path = require('path')
 module.exports = {
-	mode: 'development',
+	mode: 'production',
 	entry: './browser.jsx',
 	output: {
 		filename: 'main.js',
