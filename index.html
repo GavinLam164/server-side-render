@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		const originPushState = window.history.pushState.bind(window.history)
+		window.history.pushState = (state, title, url) => {
+			console.log(url)
+			originPushState(state, title, url)
+		}
+
+		const originReplaceState = window.history.replaceState.bind(window.history)
+		window.history.replaceState = (state, title, url) => {
+			console.log(url)
+			originReplaceState(state, title, url)
+		}
+
+		window.history.pushState({name: 'lgw', age: 18}, '测试', '/preview')
+
+	</script>
+</body>
+</html>
